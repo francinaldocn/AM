@@ -1212,7 +1212,7 @@ if __name__ == '__main__':
 
 ## 5. O algoritmo do vídeo usa o número de iterações como critério de parada. Mude o algoritmo para considerar um critério de parada que é relacionado ao tamanho do gradiente (como no algoritmo apresentado em sala). Plote o tamanho do gradiente vs número de iterações.
 
-Utilizou-se como critério de parada o coeficiente linear
+Utilizou-se como critério de parada o coeficientes linear e angular
 
 
 ```python
