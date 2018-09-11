@@ -1,1 +1,1 @@
-Regressão Linear Multifatorial
+Regressão Linear Multipla
