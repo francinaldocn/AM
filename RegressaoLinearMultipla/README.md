@@ -137,11 +137,20 @@ print("\nA versão vetorizada rodou em: " + str(1000*(toc-tic)) + " ms")
     Starting gradient descent at w0 = [0.], w1 = [0.],  w2 = [0.],  w3 = [0.],  w4 = [0.],  w5 = [0.], error = [[54.47995386]]
     
     Running...
-    gradient : 1.780077889634732e-09
+    MSE na iteração 0 é de [[1.45585441]]
+    MSE na iteração 100000 é de [[0.41164991]]
+    MSE na iteração 200000 é de [[0.41134238]]
+    MSE na iteração 300000 é de [[0.41133766]]
+    MSE na iteração 400000 é de [[0.41133759]]
+    MSE na iteração 500000 é de [[0.41133759]]
+    MSE na iteração 600000 é de [[0.41133759]]
+    MSE na iteração 700000 é de [[0.41133759]]
+    MSE na iteração 800000 é de [[0.41133759]]
+    MSE na iteração 900000 é de [[0.41133759]]
     
     O gradiente descendente convergiu com w0 = [1.73771151], w1 = [0.10304143], w2 = [0.0464367],  w3 = [0.16409834],  w4 = [0.38117843],  w5 = [0.02027816], error = [[0.41133759]]
     
-    A versão vetorizada rodou em: 20593.058586120605 ms
+    A versão vetorizada rodou em: 14553.412199020386 ms
 
 
 ## Implementação da Regressão Linear Múltipa utilizando a biblioteca scikit-learn
