@@ -79,20 +79,24 @@ def compute_mse_vectorized(w,X,Y):
 
 ```python
 def step_gradient_vectorized(w_current, X, y, learning_rate):
-    m = len(y);
+    m = len(y)
+    res = Y - np.dot(X, w_current)
+    gradient = -2 * (X.T @ res)
     new_w = w_current - (learning_rate/m) * X.T @ (X @ w_current - y)
-    return new_w
+    return [new_w, gradient]
+
 ```
 
 
 ```python
 def gradient_descent_runner_vectorized(starting_w, X, y, learning_rate, epsilon, iterations):
     w = starting_w
-    grad = np.array([np.inf,np.inf,np.inf,np.inf,np.inf,np.inf])
+    grad = np.linalg.norm(X)
     iter = 1
+    #while (np.linalg.norm(grad) >= epsilon):
     for iter in range(iterations):
-        w = step_gradient_vectorized(w,X,Y,learning_rate)
-        grad = w
+        w, gradient = step_gradient_vectorized(w,X,Y,learning_rate)
+        grad = gradient
         if iter % 100000 == 0:
             print("MSE na iteração {0} é de {1}".format(iter,compute_mse_vectorized(w, X, Y)))
             iter+= 1
@@ -119,6 +123,8 @@ init_w = np.zeros(((len(points[0,:])-1),1))
 learning_rate = 0.003 
 # Número de iterações
 iterations = 1000000
+# 
+epsilon = 1.7801187720365064e-09
 print("Starting gradient descent at w0 = {0}, w1 = {1},  w2 = {2},  w3 = {3},  w4 = {4},  w5 = {5}, error = {6}".format(init_w[0], init_w[1], init_w[2], init_w[3], init_w[4], init_w[5], compute_mse_vectorized(init_w, X,Y)))
 print("\nRunning...")
 tic = time.time()
@@ -131,20 +137,11 @@ print("\nA versão vetorizada rodou em: " + str(1000*(toc-tic)) + " ms")
     Starting gradient descent at w0 = [0.], w1 = [0.],  w2 = [0.],  w3 = [0.],  w4 = [0.],  w5 = [0.], error = [[54.47995386]]
     
     Running...
-    MSE na iteração 0 é de [[1.45585441]]
-    MSE na iteração 100000 é de [[0.41164991]]
-    MSE na iteração 200000 é de [[0.41134238]]
-    MSE na iteração 300000 é de [[0.41133766]]
-    MSE na iteração 400000 é de [[0.41133759]]
-    MSE na iteração 500000 é de [[0.41133759]]
-    MSE na iteração 600000 é de [[0.41133759]]
-    MSE na iteração 700000 é de [[0.41133759]]
-    MSE na iteração 800000 é de [[0.41133759]]
-    MSE na iteração 900000 é de [[0.41133759]]
+    gradient : 1.780077889634732e-09
     
     O gradiente descendente convergiu com w0 = [1.73771151], w1 = [0.10304143], w2 = [0.0464367],  w3 = [0.16409834],  w4 = [0.38117843],  w5 = [0.02027816], error = [[0.41133759]]
     
-    A versão vetorizada rodou em: 8394.37484741211 ms
+    A versão vetorizada rodou em: 20593.058586120605 ms
 
 
 ## Implementação da Regressão Linear Múltipa utilizando a biblioteca scikit-learn
