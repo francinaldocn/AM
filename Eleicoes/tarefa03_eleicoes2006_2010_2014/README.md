@@ -70,6 +70,7 @@ from sklearn import metrics
 ```python
 # Carregando o dataset eleições
 eleicoes2006a2010 = pd.read_csv('eleicoes_2006_a_2010.csv')
+eleicoes2014 = pd.read_csv('eleicoes_2014.csv')
 ```
 
 ### Conferindo os dados
@@ -253,6 +254,183 @@ eleicoes2006a2010.head()
 
 
 ```python
+eleicoes2014.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ano</th>
+      <th>sq_candidato</th>
+      <th>nome_candidato</th>
+      <th>sigla_uf</th>
+      <th>sigla_partido</th>
+      <th>qtd_doacoes</th>
+      <th>qtd_doadores</th>
+      <th>total_receita</th>
+      <th>media_receita</th>
+      <th>recursos de outros candidatos/comitês</th>
+      <th>...</th>
+      <th>qtd_despesas</th>
+      <th>qtd_fornecedores</th>
+      <th>total_despesa</th>
+      <th>media_despesa</th>
+      <th>descricao_cargo</th>
+      <th>sexo</th>
+      <th>grau_instrucao</th>
+      <th>estado_civil</th>
+      <th>descricao_ocupacao</th>
+      <th>votos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014</td>
+      <td>10000000135</td>
+      <td>EMERSON DA SILVA SANTOS</td>
+      <td>AC</td>
+      <td>PSOL</td>
+      <td>3</td>
+      <td>3</td>
+      <td>1580.00</td>
+      <td>526.666667</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>3</td>
+      <td>3</td>
+      <td>1580.00</td>
+      <td>526.666667</td>
+      <td>DEPUTADO FEDERAL</td>
+      <td>MASCULINO</td>
+      <td>ENSINO MÉDIO COMPLETO</td>
+      <td>SOLTEIRO(A)</td>
+      <td>CORRETOR DE IMÓVEIS, SEGUROS, TÍTULOS E VALORES</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014</td>
+      <td>10000000142</td>
+      <td>GERALDO SILVA DOS SANTOS</td>
+      <td>AC</td>
+      <td>PSOL</td>
+      <td>5</td>
+      <td>5</td>
+      <td>3180.00</td>
+      <td>636.000000</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>6</td>
+      <td>5</td>
+      <td>3130.02</td>
+      <td>626.004000</td>
+      <td>DEPUTADO FEDERAL</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR COMPLETO</td>
+      <td>SOLTEIRO(A)</td>
+      <td>VIGILANTE</td>
+      <td>383</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>10000000158</td>
+      <td>CARLOS CESAR CORREIA DE MESSIAS</td>
+      <td>AC</td>
+      <td>PSB</td>
+      <td>40</td>
+      <td>38</td>
+      <td>333293.13</td>
+      <td>8770.871842</td>
+      <td>1923.07</td>
+      <td>...</td>
+      <td>145</td>
+      <td>139</td>
+      <td>326869.78</td>
+      <td>2351.581151</td>
+      <td>DEPUTADO FEDERAL</td>
+      <td>MASCULINO</td>
+      <td>ENSINO FUNDAMENTAL INCOMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>OUTROS</td>
+      <td>26448</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014</td>
+      <td>10000000161</td>
+      <td>IDESIO LUIS FRANKE</td>
+      <td>AC</td>
+      <td>PT</td>
+      <td>29</td>
+      <td>29</td>
+      <td>156719.32</td>
+      <td>5404.114483</td>
+      <td>39122.32</td>
+      <td>...</td>
+      <td>136</td>
+      <td>121</td>
+      <td>241016.07</td>
+      <td>1991.868347</td>
+      <td>DEPUTADO FEDERAL</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR COMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>AGRÔNOMO</td>
+      <td>9896</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014</td>
+      <td>10000000163</td>
+      <td>LEONARDO CUNHA DE BRITO</td>
+      <td>AC</td>
+      <td>PT</td>
+      <td>160</td>
+      <td>146</td>
+      <td>711083.00</td>
+      <td>4870.431507</td>
+      <td>10000.00</td>
+      <td>...</td>
+      <td>518</td>
+      <td>354</td>
+      <td>567401.15</td>
+      <td>1602.828107</td>
+      <td>DEPUTADO FEDERAL</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR COMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>ADVOGADO</td>
+      <td>20876</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div>
+
+
+
+
+```python
 eleicoes2006a2010.info()
 ```
 
@@ -284,6 +462,41 @@ eleicoes2006a2010.info()
     votos                                    7330 non-null int64
     dtypes: float64(8), int64(7), object(8)
     memory usage: 1.3+ MB
+
+
+
+```python
+eleicoes2014.info()
+```
+
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 4936 entries, 0 to 4935
+    Data columns (total 23 columns):
+    ano                                      4936 non-null int64
+    sq_candidato                             4936 non-null int64
+    nome_candidato                           4936 non-null object
+    sigla_uf                                 4936 non-null object
+    sigla_partido                            4936 non-null object
+    qtd_doacoes                              4936 non-null int64
+    qtd_doadores                             4936 non-null int64
+    total_receita                            4936 non-null float64
+    media_receita                            4936 non-null float64
+    recursos de outros candidatos/comitês    3191 non-null float64
+    recursos de pessoas físicas              3727 non-null float64
+    recursos de pessoas jurídicas            1714 non-null float64
+    recursos próprios                        2860 non-null float64
+    qtd_despesas                             4936 non-null int64
+    qtd_fornecedores                         4936 non-null int64
+    total_despesa                            4936 non-null float64
+    media_despesa                            4936 non-null float64
+    descricao_cargo                          4936 non-null object
+    sexo                                     4936 non-null object
+    grau_instrucao                           4936 non-null object
+    estado_civil                             4936 non-null object
+    descricao_ocupacao                       4936 non-null object
+    votos                                    4936 non-null int64
+    dtypes: float64(8), int64(7), object(8)
+    memory usage: 887.0+ KB
 
 
 
@@ -482,6 +695,200 @@ eleicoes2006a2010.describe()
 
 
 ```python
+eleicoes2014.describe()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ano</th>
+      <th>sq_candidato</th>
+      <th>qtd_doacoes</th>
+      <th>qtd_doadores</th>
+      <th>total_receita</th>
+      <th>media_receita</th>
+      <th>recursos de outros candidatos/comitês</th>
+      <th>recursos de pessoas físicas</th>
+      <th>recursos de pessoas jurídicas</th>
+      <th>recursos próprios</th>
+      <th>qtd_despesas</th>
+      <th>qtd_fornecedores</th>
+      <th>total_despesa</th>
+      <th>media_despesa</th>
+      <th>votos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>4936.0</td>
+      <td>4.936000e+03</td>
+      <td>4936.000000</td>
+      <td>4936.000000</td>
+      <td>4.936000e+03</td>
+      <td>4936.000000</td>
+      <td>3.191000e+03</td>
+      <td>3.727000e+03</td>
+      <td>1.714000e+03</td>
+      <td>2.860000e+03</td>
+      <td>4936.000000</td>
+      <td>4936.000000</td>
+      <td>4.936000e+03</td>
+      <td>4936.000000</td>
+      <td>4.936000e+03</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2014.0</td>
+      <td>1.656989e+11</td>
+      <td>24.809765</td>
+      <td>21.216572</td>
+      <td>2.005536e+05</td>
+      <td>6135.051733</td>
+      <td>3.349950e+04</td>
+      <td>4.084598e+04</td>
+      <td>2.036965e+05</td>
+      <td>4.356332e+04</td>
+      <td>148.208671</td>
+      <td>117.088736</td>
+      <td>2.051600e+05</td>
+      <td>1345.348445</td>
+      <td>1.780833e+04</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.0</td>
+      <td>7.140817e+10</td>
+      <td>49.980431</td>
+      <td>40.888475</td>
+      <td>5.347148e+05</td>
+      <td>14250.293622</td>
+      <td>1.139275e+05</td>
+      <td>1.085905e+05</td>
+      <td>4.256615e+05</td>
+      <td>1.757768e+05</td>
+      <td>441.152375</td>
+      <td>347.458705</td>
+      <td>5.537136e+05</td>
+      <td>1877.675782</td>
+      <td>4.641931e+04</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2014.0</td>
+      <td>1.000000e+10</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>3.000000e-01</td>
+      <td>0.300000</td>
+      <td>1.500000e-01</td>
+      <td>1.000000e-02</td>
+      <td>1.170000e+00</td>
+      <td>2.000000e-01</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>7.200000e-01</td>
+      <td>0.720000</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2014.0</td>
+      <td>1.200000e+11</td>
+      <td>5.000000</td>
+      <td>4.000000</td>
+      <td>3.025785e+03</td>
+      <td>606.562500</td>
+      <td>1.087750e+03</td>
+      <td>1.100000e+03</td>
+      <td>3.000000e+03</td>
+      <td>1.200000e+03</td>
+      <td>6.000000</td>
+      <td>5.000000</td>
+      <td>3.026463e+03</td>
+      <td>470.965998</td>
+      <td>4.740000e+02</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2014.0</td>
+      <td>1.900000e+11</td>
+      <td>9.000000</td>
+      <td>9.000000</td>
+      <td>1.143493e+04</td>
+      <td>1416.698571</td>
+      <td>4.205000e+03</td>
+      <td>4.500000e+03</td>
+      <td>2.793599e+04</td>
+      <td>5.005000e+03</td>
+      <td>17.000000</td>
+      <td>15.000000</td>
+      <td>1.143633e+04</td>
+      <td>857.971212</td>
+      <td>1.705500e+03</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2014.0</td>
+      <td>2.400000e+11</td>
+      <td>22.000000</td>
+      <td>19.000000</td>
+      <td>8.882676e+04</td>
+      <td>4599.437500</td>
+      <td>1.921249e+04</td>
+      <td>2.746000e+04</td>
+      <td>2.007535e+05</td>
+      <td>2.183443e+04</td>
+      <td>72.000000</td>
+      <td>60.000000</td>
+      <td>9.013437e+04</td>
+      <td>1533.463301</td>
+      <td>1.044750e+04</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2014.0</td>
+      <td>2.700000e+11</td>
+      <td>928.000000</td>
+      <td>873.000000</td>
+      <td>5.836140e+06</td>
+      <td>281250.000000</td>
+      <td>1.788100e+06</td>
+      <td>1.826762e+06</td>
+      <td>3.828338e+06</td>
+      <td>3.752000e+06</td>
+      <td>6413.000000</td>
+      <td>5170.000000</td>
+      <td>7.420179e+06</td>
+      <td>35520.493556</td>
+      <td>1.524361e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
 # Visualizando as colunas do dataset
 eleicoes2006a2010.columns
 ```
@@ -502,6 +909,25 @@ eleicoes2006a2010.columns
 
 
 ```python
+eleicoes2014.columns
+```
+
+
+
+
+    Index(['ano', 'sq_candidato', 'nome_candidato', 'sigla_uf', 'sigla_partido',
+           'qtd_doacoes', 'qtd_doadores', 'total_receita', 'media_receita',
+           'recursos de outros candidatos/comitês', 'recursos de pessoas físicas',
+           'recursos de pessoas jurídicas', 'recursos próprios', 'qtd_despesas',
+           'qtd_fornecedores', 'total_despesa', 'media_despesa', 'descricao_cargo',
+           'sexo', 'grau_instrucao', 'estado_civil', 'descricao_ocupacao',
+           'votos'],
+          dtype='object')
+
+
+
+
+```python
 eleicoes2006a2010.shape
 ```
 
@@ -509,6 +935,18 @@ eleicoes2006a2010.shape
 
 
     (7330, 23)
+
+
+
+
+```python
+eleicoes2014.shape
+```
+
+
+
+
+    (4936, 23)
 
 
 
@@ -547,9 +985,66 @@ eleicoes2006a2010.isnull().sum()
 
 
 
-Verificamos que as colunas (total_receita, media_receita, recursos_de_outros_candidatos/comites, recursos_de_pessoas_fisicas, recursos_proprios) tem valores faltantes.
+
+```python
+eleicoes2014.isnull().sum()
+```
+
+
+
+
+    ano                                         0
+    sq_candidato                                0
+    nome_candidato                              0
+    sigla_uf                                    0
+    sigla_partido                               0
+    qtd_doacoes                                 0
+    qtd_doadores                                0
+    total_receita                               0
+    media_receita                               0
+    recursos de outros candidatos/comitês    1745
+    recursos de pessoas físicas              1209
+    recursos de pessoas jurídicas            3222
+    recursos próprios                        2076
+    qtd_despesas                                0
+    qtd_fornecedores                            0
+    total_despesa                               0
+    media_despesa                               0
+    descricao_cargo                             0
+    sexo                                        0
+    grau_instrucao                              0
+    estado_civil                                0
+    descricao_ocupacao                          0
+    votos                                       0
+    dtype: int64
+
+
+
+Verificamos que as colunas (total_receita, media_receita, recursos_de_outros_candidatos/comites, recursos_de_pessoas_fisicas, recursos_proprios) tem valores faltantes no dataset de 2006 e 2010, enquanto no dataset de 2014 tem valores faltantes nos atributos (recursos_de_outros_candidatos/comites, recursos_de_pessoas_fisicas, recursos_proprios).
+Outra observação é em relação ao nome das colunas no dataset, há uma diferença na nomeclatura.
 
 ## Pré-processamento dos dados 
+
+Unificando os nomes das colunas nos dois datasets tomando como base os nomes das colunas do dataset eleicoies_2006a2010.csv
+
+
+```python
+old_names = ['ano', 'sq_candidato', 'nome_candidato', 'sigla_uf', 'sigla_partido',
+       'qtd_doacoes', 'qtd_doadores', 'total_receita', 'media_receita',
+       'recursos de outros candidatos/comitês', 'recursos de pessoas físicas',
+       'recursos de pessoas jurídicas', 'recursos próprios', 'qtd_despesas',
+       'qtd_fornecedores', 'total_despesa', 'media_despesa', 'descricao_cargo',
+       'sexo', 'grau_instrucao', 'estado_civil', 'descricao_ocupacao',
+       'votos'] 
+new_names = ['ano', 'sequencial_candidato', 'nome', 'uf', 'partido',
+       'quantidade_doacoes', 'quantidade_doadores', 'total_receita',
+       'media_receita', 'recursos_de_outros_candidatos/comites',
+       'recursos_de_pessoas_fisicas', 'recursos_de_pessoas_juridicas',
+       'recursos_proprios', 'quantidade_despesas', 'quantidade_fornecedores',
+       'total_despesa', 'media_despesa', 'cargo', 'sexo', 'grau',
+       'estado_civil', 'ocupacao', 'votos'] 
+eleicoes2014.rename(columns=dict(zip(old_names, new_names)), inplace=True) 
+```
 
 #### Separando os datasets de treino e teste
 
@@ -557,18 +1052,16 @@ Verificamos que as colunas (total_receita, media_receita, recursos_de_outros_can
 ```python
 # Separando os datasets para treino e teste
 # Treino
-eleicoes2006 = eleicoes2006a2010[eleicoes2006a2010['ano'] == 2006]
 # Selecionando os atributos a serem utilizados no treino
-train = eleicoes2006.loc[:,['uf', 'partido','quantidade_doacoes', 'quantidade_doadores', 
+train = eleicoes2006a2010.loc[:,['uf', 'partido','quantidade_doacoes', 'quantidade_doadores', 
        'total_receita', 'media_receita', 'recursos_de_outros_candidatos/comites',
        'recursos_de_pessoas_fisicas', 'recursos_de_pessoas_juridicas',
        'recursos_proprios', 'quantidade_despesas', 'quantidade_fornecedores',
        'total_despesa', 'media_despesa', 'cargo', 'sexo', 'grau',
        'estado_civil', 'ocupacao', 'votos']]
 # Teste
-eleicoes2010 = eleicoes2006a2010[eleicoes2006a2010['ano'] == 2010]
 # Selecionando os atributos a serem utilizados no teste
-test = eleicoes2010.loc[:,['uf', 'partido','quantidade_doacoes', 'quantidade_doadores', 
+test = eleicoes2014.loc[:,['uf', 'partido','quantidade_doacoes', 'quantidade_doadores', 
        'total_receita', 'media_receita', 'recursos_de_outros_candidatos/comites',
        'recursos_de_pessoas_fisicas', 'recursos_de_pessoas_juridicas',
        'recursos_proprios', 'quantidade_despesas', 'quantidade_fornecedores',
@@ -596,7 +1089,7 @@ plt.show()
 ```
 
 
-![png](output_16_0.png)
+![png](output_24_0.png)
 
 
 Verificamos através da visualização acima que as variáveis numéricas estão completamente enviesadas à esquerda.
@@ -614,7 +1107,7 @@ plt.show()
 ```
 
 
-![png](output_18_0.png)
+![png](output_26_0.png)
 
 
 #### Transformações
@@ -642,7 +1135,7 @@ plt.show()
 ```
 
 
-![png](output_21_0.png)
+![png](output_29_0.png)
 
 
 Verificamos que com a aplicação da função logarítmica a maior parte dos atributos estão menos enviesados, no entanto alguns desses atributos ainda apresentam algun enviesamento, como é o caso das quantidades de despesas, doações, doadores e fornecedores.
@@ -666,7 +1159,7 @@ plt.show()
 ```
 
 
-![png](output_23_0.png)
+![png](output_31_0.png)
 
 
 Após as transformações verificamos que a correlação entre os atributos numéricos e a variável alvo (votos) aumentou.
@@ -732,7 +1225,7 @@ lm.fit(X_train,y_train)
 print(lm.intercept_)
 ```
 
-    367327713966.3767
+    82952970390.22813
 
 
 
@@ -769,43 +1262,43 @@ coeff_df.head(10)
   <tbody>
     <tr>
       <th>quantidade_doacoes</th>
-      <td>0.051416</td>
+      <td>0.000833</td>
     </tr>
     <tr>
       <th>quantidade_doadores</th>
-      <td>0.593542</td>
+      <td>0.706138</td>
     </tr>
     <tr>
       <th>total_receita</th>
-      <td>-0.336630</td>
+      <td>-0.386486</td>
     </tr>
     <tr>
       <th>media_receita</th>
-      <td>0.502820</td>
+      <td>0.562266</td>
     </tr>
     <tr>
       <th>recursos_de_outros_candidatos/comites</th>
-      <td>-0.007978</td>
+      <td>0.012911</td>
     </tr>
     <tr>
       <th>recursos_de_pessoas_fisicas</th>
-      <td>0.044898</td>
+      <td>0.031511</td>
     </tr>
     <tr>
       <th>recursos_de_pessoas_juridicas</th>
-      <td>0.058351</td>
+      <td>0.054249</td>
     </tr>
     <tr>
       <th>recursos_proprios</th>
-      <td>0.019292</td>
+      <td>0.025668</td>
     </tr>
     <tr>
       <th>quantidade_despesas</th>
-      <td>0.108593</td>
+      <td>-0.008056</td>
     </tr>
     <tr>
       <th>quantidade_fornecedores</th>
-      <td>1.172241</td>
+      <td>1.117657</td>
     </tr>
   </tbody>
 </table>
@@ -841,7 +1334,7 @@ plt.show()
 ```
 
 
-![png](output_39_0.png)
+![png](output_47_0.png)
 
 
 
@@ -855,7 +1348,7 @@ plt.show()
 ```
 
 
-![png](output_40_0.png)
+![png](output_48_0.png)
 
 
 #### Metricas de avaliação do modelo
@@ -870,7 +1363,7 @@ $$\sqrt{\frac 1n\sum_{i=1}^n(y_i-\hat{y}_i)^2}$$
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, lm_predict)))
 ```
 
-    RMSE: 0.9497802587582183
+    RMSE: 1.3465764158193816
 
 
 
@@ -879,7 +1372,7 @@ print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, lm_predict)))
 print('RMSE:', np.sqrt(metrics.mean_squared_error(np.expm1(y_test), np.expm1(lm_predict))))
 ```
 
-    RMSE: 32955.47671713665
+    RMSE: 36898.778790070166
 
 
 **Coeficiente de Determinação ($R^2$)**
@@ -900,7 +1393,7 @@ $$SSTO=\sum_{i=1}^{n}(y_i-\bar{y})^2$$
 print('R²:', metrics.r2_score(y_test, lm_predict, sample_weight=None,multioutput="uniform_average"))
 ```
 
-    R²: 0.7683174748636059
+    R²: 0.6514578697213249
 
 
 Verificando o R2 acima o modelo consegue explicar 76,83% dos valores observados
@@ -944,7 +1437,7 @@ model_ridge.fit(X_train,y_train)
 print(model_ridge.intercept_)
 ```
 
-    2.6134047401261036
+    2.3483067976879486
 
 
 
@@ -981,43 +1474,43 @@ coef_ridge.head(10)
   <tbody>
     <tr>
       <th>quantidade_doacoes</th>
-      <td>0.068976</td>
+      <td>0.006609</td>
     </tr>
     <tr>
       <th>quantidade_doadores</th>
-      <td>0.589239</td>
+      <td>0.697997</td>
     </tr>
     <tr>
       <th>total_receita</th>
-      <td>-0.350011</td>
+      <td>-0.388976</td>
     </tr>
     <tr>
       <th>media_receita</th>
-      <td>0.521091</td>
+      <td>0.564491</td>
     </tr>
     <tr>
       <th>recursos_de_outros_candidatos/comites</th>
-      <td>-0.007651</td>
+      <td>0.012913</td>
     </tr>
     <tr>
       <th>recursos_de_pessoas_fisicas</th>
-      <td>0.044876</td>
+      <td>0.031570</td>
     </tr>
     <tr>
       <th>recursos_de_pessoas_juridicas</th>
-      <td>0.060478</td>
+      <td>0.055800</td>
     </tr>
     <tr>
       <th>recursos_proprios</th>
-      <td>0.018684</td>
+      <td>0.025431</td>
     </tr>
     <tr>
       <th>quantidade_despesas</th>
-      <td>0.134593</td>
+      <td>0.016655</td>
     </tr>
     <tr>
       <th>quantidade_fornecedores</th>
-      <td>0.887887</td>
+      <td>0.945262</td>
     </tr>
   </tbody>
 </table>
@@ -1051,7 +1544,7 @@ plt.show()
 ```
 
 
-![png](output_56_0.png)
+![png](output_64_0.png)
 
 
 
@@ -1065,7 +1558,7 @@ plt.show()
 ```
 
 
-![png](output_57_0.png)
+![png](output_65_0.png)
 
 
 ##### Metricas de avaliação do modelo
@@ -1076,7 +1569,7 @@ plt.show()
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, ridge_predict)))
 ```
 
-    RMSE: 0.9489998785285962
+    RMSE: 1.3460679674004807
 
 
 
@@ -1085,7 +1578,7 @@ print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, ridge_predict)))
 print('R²:', metrics.r2_score(y_test, ridge_predict, sample_weight=None,multioutput="uniform_average"))
 ```
 
-    R²: 0.7686980390705128
+    R²: 0.6517210292953308
 
 
 O principal parâmetro de ajuste para o modelo Ridge é alpha - um parâmetro de regularização que mede quão flexível é nosso modelo. Quanto maior a regularização, menos propenso será o nosso modelo de overfit. No entanto, também perderá a flexibilidade e poderá não capturar todo o sinal nos dados.
@@ -1108,7 +1601,7 @@ plt.show()
 ```
 
 
-![png](output_63_0.png)
+![png](output_71_0.png)
 
 
 Observe a curva em forma de U acima. Quando alfa é muito grande, a regularização é muito forte e o modelo não consegue capturar todas as complexidades dos dados. Se, no entanto, deixarmos o modelo ser muito flexível (alfa pequeno), o modelo começa a se sobrepor. Um valor de alfa = 10 é quase certo com base no gráfico acima.
@@ -1121,7 +1614,7 @@ cv_ridge.min()
 
 
 
-    0.9529334692601521
+    1.3108200774881498
 
 
 
@@ -1142,7 +1635,7 @@ rmse_cv(model_lasso).mean()
 
 
 
-    0.9533504297515574
+    1.3110360236232685
 
 
 
@@ -1152,7 +1645,7 @@ rmse_cv(model_lasso).mean()
 print(model_lasso.intercept_)
 ```
 
-    2.7111779563269813
+    2.6682559962263
 
 
 
@@ -1189,60 +1682,47 @@ coef_lasso.head(10)
   <tbody>
     <tr>
       <th>quantidade_doacoes</th>
-      <td>0.040191</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>quantidade_doadores</th>
-      <td>0.587111</td>
+      <td>0.678236</td>
     </tr>
     <tr>
       <th>total_receita</th>
-      <td>-0.328817</td>
+      <td>-0.380253</td>
     </tr>
     <tr>
       <th>media_receita</th>
-      <td>0.489300</td>
+      <td>0.548014</td>
     </tr>
     <tr>
       <th>recursos_de_outros_candidatos/comites</th>
-      <td>-0.007769</td>
+      <td>0.012901</td>
     </tr>
     <tr>
       <th>recursos_de_pessoas_fisicas</th>
-      <td>0.044839</td>
+      <td>0.031541</td>
     </tr>
     <tr>
       <th>recursos_de_pessoas_juridicas</th>
-      <td>0.059667</td>
+      <td>0.057462</td>
     </tr>
     <tr>
       <th>recursos_proprios</th>
-      <td>0.018832</td>
+      <td>0.025420</td>
     </tr>
     <tr>
       <th>quantidade_despesas</th>
-      <td>0.108211</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>quantidade_fornecedores</th>
-      <td>1.042395</td>
+      <td>0.827402</td>
     </tr>
   </tbody>
 </table>
 </div>
-
-
-
-
-```python
-# R-quadraro para o modelo com regularização ridge
-model_lasso.score(X_train,y_train)
-```
-
-
-
-
-    0.7785785143321863
 
 
 
@@ -1258,7 +1738,7 @@ lasso_predict = model_lasso.predict(X_test)
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, lasso_predict)))
 ```
 
-    RMSE: 0.9486114571684503
+    RMSE: 1.3484054915252062
 
 
 
@@ -1267,7 +1747,7 @@ print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, lasso_predict)))
 print('R²:',metrics.r2_score(y_test, lasso_predict, sample_weight=None,multioutput="uniform_average"))
 ```
 
-    R²: 0.7688873420160903
+    R²: 0.6505103662520914
 
 
 
@@ -1283,7 +1763,7 @@ Uma coisa interessante sobre o Lasso é que ele apresenta seleção para você -
 print("O Lasso selecionou " + str(sum(coef_lasso != 0)) + " variaveis e eliminou outras " +  str(sum(coef_lasso == 0)) + " variables")
 ```
 
-    O Lasso selecionou 74 variaveis e eliminou outras 11 variables
+    O Lasso selecionou 74 variaveis e eliminou outras 16 variables
 
 
 Podemos também dar uma olhada diretamente nos coeficientes mais importantes:
@@ -1304,10 +1784,10 @@ plt.show()
 ```
 
 
-![png](output_81_0.png)
+![png](output_88_0.png)
 
 
-Podemos perceber pela visualização acima que o atributo mais importante é `quantidade_fornecedores` seguido da `media_despesa`.
+Podemos perceber pela visualização acima que o atributo mais importante é `quantidade_fornecedores` seguido da `quantidade_doadores`.
 
 
 ```python
@@ -1327,7 +1807,7 @@ plt.show()
 ```
 
 
-![png](output_83_0.png)
+![png](output_90_0.png)
 
 
 
@@ -1341,7 +1821,7 @@ plt.show()
 ```
 
 
-![png](output_84_0.png)
+![png](output_91_0.png)
 
 
 
@@ -1377,10 +1857,10 @@ plt.show()
 ```
 
 
-![png](output_85_0.png)
+![png](output_92_0.png)
 
 
-Pela visualização acima verificamos que as regresões lineares tiveram um desempenho parecido com $R^2$ um pouco maior para a Regressão linear com regularização LASSO e RMSE menor para a Regressão Linear com regularização RIDGE.
+Pela visualização acima verificamos que as regresões lineares tiveram um desempenho parecido com $R^2$ um pouco maior para a Regressão linear com regularização RIDGE e RMSE menor para a Regressão Linear com regularização LASSO.
 
 ###  KNN Regressor
 
@@ -1419,7 +1899,7 @@ knn_predict = knn.predict(X_test)
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, knn_predict)))
 ```
 
-    RMSE: 1.0012312716097589
+    RMSE: 1.4128770771693087
 
 
 
@@ -1428,7 +1908,7 @@ print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, knn_predict)))
 print('R²:', metrics.r2_score(y_test, knn_predict, sample_weight=None,multioutput="uniform_average"))
 ```
 
-    R²: 0.7425364150998915
+    R²: 0.61629095947635
 
 
 
@@ -1449,7 +1929,7 @@ plt.show()
 ```
 
 
-![png](output_94_0.png)
+![png](output_101_0.png)
 
 
 
@@ -1463,7 +1943,7 @@ plt.show()
 ```
 
 
-![png](output_95_0.png)
+![png](output_102_0.png)
 
 
 O KNN Regressor teve um desempenho menor que as Regressões Lineares, com $R^2$ = 0.742536 e RMSE = 1.0012312716097589
@@ -1518,7 +1998,7 @@ errors = abs(y_test - rfr_predict)
 print('Mean Absolute Error:', np.mean(errors))
 ```
 
-    Mean Absolute Error: 0.7299339175342557
+    Mean Absolute Error: 0.8746496270963091
 
 
 
@@ -1527,7 +2007,7 @@ print('Mean Absolute Error:', np.mean(errors))
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, rfr_predict)))
 ```
 
-    RMSE: 0.9414205719737669
+    RMSE: 1.359949823634835
 
 
 
@@ -1536,7 +2016,7 @@ print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, rfr_predict)))
 print('R²:', metrics.r2_score(y_test, rfr_predict, sample_weight=None,multioutput="uniform_average"))
 ```
 
-    R²: 0.772377929443089
+    R²: 0.6445004596140174
 
 
 
@@ -1552,7 +2032,7 @@ accuracy = 100 - np.mean(mape)
 print('Accuracy:', round(accuracy, 2), '%.')
 ```
 
-    Accuracy: 90.31 %.
+    Accuracy: -inf %.
 
 
 
@@ -1573,12 +2053,12 @@ plt.plot(estimators, scores)
 
 
 
-    [<matplotlib.lines.Line2D at 0x7f0b762c8fd0>]
+    [<matplotlib.lines.Line2D at 0x7fc9923af080>]
 
 
 
 
-![png](output_108_1.png)
+![png](output_115_1.png)
 
 
 
@@ -1599,7 +2079,7 @@ plt.show()
 ```
 
 
-![png](output_109_0.png)
+![png](output_116_0.png)
 
 
 
@@ -1613,7 +2093,7 @@ plt.show()
 ```
 
 
-![png](output_110_0.png)
+![png](output_117_0.png)
 
 
 ### Modelo SVR
@@ -1665,7 +2145,7 @@ plt.show()
 ```
 
 
-![png](output_116_0.png)
+![png](output_123_0.png)
 
 
 
@@ -1679,7 +2159,7 @@ plt.show()
 ```
 
 
-![png](output_117_0.png)
+![png](output_124_0.png)
 
 
 
@@ -1688,7 +2168,7 @@ plt.show()
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, svr_predict)))
 ```
 
-    RMSE: 1.0737196697226516
+    RMSE: 1.5372122990955224
 
 
 
@@ -1697,7 +2177,7 @@ print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, svr_predict)))
 print('R²:', metrics.r2_score(y_test, svr_predict, sample_weight=None,multioutput="uniform_average"))
 ```
 
-    R²: 0.7039065370992588
+    R²: 0.5457855204904476
 
 
 ### Regression trees
@@ -1743,7 +2223,7 @@ rt_predict = rt_model.predict(X_test)
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, rt_predict)))
 ```
 
-    RMSE: 1.005743869697156
+    RMSE: 1.4055595568220312
 
 
 
@@ -1752,7 +2232,7 @@ print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, rt_predict)))
 print('R²:', metrics.r2_score(y_test, rt_predict, sample_weight=None,multioutput="uniform_average"))
 ```
 
-    R²: 0.7402103832922939
+    R²: 0.6202552501191146
 
 
 
@@ -1786,7 +2266,7 @@ plt.show()
 ```
 
 
-![png](output_127_0.png)
+![png](output_134_0.png)
 
 
 
@@ -1807,7 +2287,7 @@ plt.show()
 ```
 
 
-![png](output_128_0.png)
+![png](output_135_0.png)
 
 
 
@@ -1821,7 +2301,7 @@ plt.show()
 ```
 
 
-![png](output_129_0.png)
+![png](output_136_0.png)
 
 
 ### Conclusão
@@ -1829,32 +2309,33 @@ plt.show()
 Dos modelos obtivemos os seguintes resultados:
 
 **Regressão Linear sem regularização**
-- RMSE: 0.9497802587582183
-- $R^2$: 0.7683174748636059
+- RMSE: 1.3465764158193816
+- $R^2$: 0.6514578697213249
 
 **Regressão Linear com regularização RIDGE**
-- RMSE: 0.9489998785285962
-- $R^2$: 0.7686980390705128
+- RMSE: 1.3460679674004807
+- $R^2$: 0.6517210292953308
 
 **Regressão Linear com regularização LASSO**
-- RMSE: 0.9533504297515574
-- $R^2$: 0.7785785143321863
+- RMSE: 1.3484054915252062
+- $R^2$: 0.6505103662520914
 
 **KNN Regressor**
-- RMSE: 1.0012312716097589
-- $R^2$: 0.7425364150998915
+- RMSE: 1.4128770771693087
+- $R^2$: 0.61629095947635
 
 **Random Forest Regressor**
-- RMSE: 0.9414205719737669
-- $R^2$: 0.772377929443089
+- RMSE: 1.359949823634835
+- $R^2$: 0.6445004596140174
 
 **SVR**
-- RMSE: 1.0737196697226516
-- $R^2$: 0.7039065370992588
+- RMSE: 1.5372122990955224
+- $R^2$: 0.5457855204904476
 
 **Regression trees**
-- RMSE: 1.005743869697156
-- $R^2$: 0.740210383292294
+- RMSE: 1.4055595568220312
+- $R^2$: 0.6202552501191146
 
-Todos os modelos avaliados conseguiram estimar mais de 70% da variável indepentente (votos), no entanto, os modelos de regressão linear obtiveram um melhor desempenho na estimativa de votos, sendo o modelo com regressão linear com regularização LASSO o com maior *Coeficiete de determinação*, explicando 77,85% da variância dos votos estimadas pelos atributos selecionados para o modelo.
+Dos modelos avaliados nenhum conseguiu estimar mais de 65,18% da variável indepentente (votos). Assim como na [parte 01 dessa tarefa](https://github.com/francinaldocn/AM/tree/master/Eleicoes/tarefa03_eleicoes2006e2010) os modelos de regressão linear obtiveram um melhor desempenho na estimativa de votos, sendo o modelo com regressão linear com regularização RIDGE o com maior *Coeficiete de determinação*, explicando 65,17% da variância dos votos estimadas pelos atributos selecionados para o modelo. O modelo SVR foi o de menor desempenho 54,57%. 
 
+Dentre os modelos avaliados o que deu melhor resultado em termos de RMSE foi a Regressão Linear com regularização RIDGE, no entanto, a regressão sem regularização e a com regularização LASSO tiveram valores de RMSE muito próximos da regressão com regularização RIDGE. 
