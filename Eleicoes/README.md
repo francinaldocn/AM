@@ -1,4 +1,4 @@
-### Tarefa com os datasets das eleições de 2006 e 2010
+### [Tarefa com os datasets das eleições de 2006 e 2010](https://github.com/francinaldocn/AM/tree/master/Eleicoes/tarefa03_eleicoes2006_2010)
 
 A tarefa pode ser encontrado no [link](https://github.com/francinaldocn/AM/tree/master/Eleicoes/tarefa03_eleicoes2006_2010)
 
@@ -7,7 +7,7 @@ Todos os modelos avaliados conseguiram estimar mais de 70% da variável indepent
 Dentre os modelos avaliados o que apresentou menor RMSE foi o Random Forest Regressor, acompanhados dos modelos de Regressão Linear com RIDGE, sem regularização e com regularização LASSO.
 
 
-### Tarefa com os datasets das eleições de 2006, 2010 e 2014
+### [Tarefa com os datasets das eleições de 2006, 2010 e 2014](https://github.com/francinaldocn/AM/tree/master/Eleicoes/tarefa03_eleicoes2006_2010_2014)
 
 A tarefa pode ser encontrado no [link](https://github.com/francinaldocn/AM/tree/master/Eleicoes/tarefa03_eleicoes2006_2010_2014)
 
