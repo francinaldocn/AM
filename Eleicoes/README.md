@@ -60,15 +60,6 @@ O notebook da tarefa pode ser encontrado no [link](https://github.com/francinald
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -221,6 +212,6 @@ Dos modelos avaliados, aplicados nos dados referente à votação dos deputados 
 
 
 
-Comparando as duas abordagens, a [primeira](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010.ipynb) como modelos gerados com os dados de 2006 e 2010 e a [segunda](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010_2014.ipynb) utilizando os datasets de 2006, 2010 e 2014, percebemos que, mesmo utilizando a mesma estrutura a estimação dos modelos foram bem diferentes. Enquanto na primeira abordagem conseguiu-se explicar até 77,29% da variância com o modelo *Random Forest Regressor* na segunda, conseguiu-se no máximo 65,14% com a *Regressão Linear com RIDGE*
+Comparando as duas abordagens, a [primeira](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010.ipynb) como modelos gerados com os dados de 2006 e 2010 e a [segunda](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010_2014.ipynb) utilizando os dados de 2006, 2010 e 2014, percebemos que, mesmo utilizando a mesma estrutura, a estimação dos modelos foi bem diferente. Enquanto na primeira abordagem conseguiu-se explicar até 77,29% da variância com o modelo *Random Forest Regressor* na segunda, conseguiu-se no máximo 65,14% com a *Regressão Linear com RIDGE*
 
-Mesmo tendo uma alta variância nos dados, que prejudica a construção de modelos, o menor RMSE ainda foi maior que a média dos votos.
+Mesmo tendo uma alta variância nos dados, o que prejudica a construção dos modelos, o menor RMSE ainda foi maior que a média dos votos.
