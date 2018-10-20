@@ -56,16 +56,6 @@ Vamos explorar dados sobre as votações que candidatos à Câmara Federal de De
 
 O notebook da tarefa pode ser encontrado no [link](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010.ipynb)
 
-
-```python
-import pandas as pd
-metricas_1 = pd.read_csv('metricas_modelo2006_2010.csv')
-metricas_1
-```
-
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -149,16 +139,6 @@ Dos modelos avaliados, aplicados nos dados referente à votação dos deputados 
 ### [Tarefa com os datasets das eleições de 2006, 2010 e 2014](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010_2014.ipynb)
 
 O notebook da tarefa pode ser encontrado no [link](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010_2014.ipynb)
-
-
-```python
-import pandas as pd
-metricas_2 = pd.read_csv('metricas_modelo2006_2010_2014.csv')
-metricas_2
-```
-
-
-
 
 <div>
 <style scoped>
