@@ -57,10 +57,6 @@ Vamos explorar dados sobre as votações que candidatos à Câmara Federal de De
 O notebook da tarefa pode ser encontrado no [link](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010.ipynb)
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -118,7 +114,6 @@ O notebook da tarefa pode ser encontrado no [link](https://github.com/francinald
 </div>
 
 
-
 Dos modelos avaliados, aplicados nos dados referente à votação dos deputados nas eleições de 2006 e 2010, chegamos as seguintes conclusões:
 
  - Todos os modelos avaliados conseguiram estimar mais de 70% da variável alvo (votos).
@@ -132,19 +127,6 @@ Dos modelos avaliados, aplicados nos dados referente à votação dos deputados 
 O notebook da tarefa pode ser encontrado no [link](https://github.com/francinaldocn/AM/blob/master/Eleicoes/tarefa03_eleicoes_2006_2010_2014.ipynb)
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
